@@ -24,7 +24,7 @@ export const signUp= async (req,res) => {
             password:hashedPassword
         })
 
-        const token = await genToken(user._id)
+        const token = await genToken(newUser._id)
         res.cookie("token",token,{
             secure:false,
             sameSite:"strict",
